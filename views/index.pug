@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  -const liStyle = {"list-style-type": "none"}
+
+  ul
+  each val in messages
+    li(style=liStyle)= val.user
+    li(style=liStyle)= val.text
+    li(style=liStyle)= val.added
+    br
+    -const aStyle = {"margin-left": "20px"}
+  a(href='/new', style=aStyle) Create New Message

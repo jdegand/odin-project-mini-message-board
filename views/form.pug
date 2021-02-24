@@ -1,0 +1,16 @@
+extends layout
+
+block content
+        h1 Create Message
+        - const labelStyle = {"width": "200px", "display": "inline-block"}
+
+        form(method='POST' action='/new')
+          div.form-group
+            label(for='user', style=labelStyle) Name:
+            input#user.form-control(type='text', name='user')
+          br
+          div.form-group
+            label(for='text', style=labelStyle) Message:
+            input#text.form-control(type='text', name='text')
+          br
+          button(type='submit') Submit Message
